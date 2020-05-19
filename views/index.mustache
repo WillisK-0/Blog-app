@@ -1,0 +1,39 @@
+<html>
+
+<head></head>
+
+
+<body>
+
+<h1>Woodturners blog</h1>
+<a href='add-post'>Click to add a new post</a>
+
+<ul>
+{{#posts}}
+
+<li>
+<div>
+<h3>{{title}}</h3>
+<p>{{body}}</p><br>
+<p>{{date_created}}</p>
+<form action='/delete-post/{{postid}}'>
+<button>Delete Post</button>
+</form>
+<form action='/update-post/{{postid}}'>
+<button>Update Post</button>
+</form>
+</div>
+</li>
+{{/posts}}
+
+</ul>
+
+
+
+
+
+
+
+</body>
+
+</html>
