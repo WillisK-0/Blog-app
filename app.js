@@ -21,6 +21,9 @@ app.get('/',(req,res)=>{
 
     })
 })
+// convert database to an API
+
+
 
 app.get('/add-post',(req,res)=>{
     res.render('add-post')
@@ -59,6 +62,15 @@ app.post('/update-post/:postid',(req,res)=>{
     })
 })
 
+
+app.get('/api',(req,res)=>{
+
+db.any('SELECT title,body,date_created,postid FROM posts').then(results =>{
+    res.json(results)
+})
+})
+    
+    
 
 app.listen(3000, () => {
     console.log("Server is running...")
